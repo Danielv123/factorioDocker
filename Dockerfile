@@ -14,6 +14,11 @@ WORKDIR /factorio/
 # COPY map.zip map.zip
 RUN bin/x64/factorio --create map.zip
 
+RUN mkdir mods
+
+VOLUME /factorio/mods
+VOLUME /factorio/saves
+
 # run the factorio server with the map specified
 CMD ["bin/x64/factorio", "--start-server", "map.zip"]
 
