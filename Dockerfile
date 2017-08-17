@@ -12,7 +12,7 @@ WORKDIR /factorio/
 
 # copy map or create a new one, simply change the comments around
 # COPY map.zip map.zip
-RUN bin/x64/factorio --create map.zip
+RUN bin/x64/factorio --create saves/map.zip
 
 RUN mkdir mods
 
@@ -20,7 +20,7 @@ VOLUME /factorio/mods
 VOLUME /factorio/saves
 
 # run the factorio server with the map specified
-CMD ["bin/x64/factorio", "--start-server", "map.zip"]
+CMD ["bin/x64/factorio", "--start-server", "saves/map.zip"]
 
 # build with
 # sudo docker build --force-rm -t danielvestol/factorio:latest factorioDocker
